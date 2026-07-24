@@ -1,0 +1,32 @@
+================================================================================
+File: /home/silviozylfi/projects/tesi-smia/data/raw/ascad/ASCAD_data/ASCAD_databases/ATMega8515_raw_traces.h5
+File size: 5.59 GB
+================================================================================
+
+Root keys:
+  - metadata
+  - traces
+  No attributes
+
+Complete structure:
+
+[DATASET] metadata
+  Path: /metadata
+  Shape: (60000,)
+  Dimensions: 1
+  Dtype: [('plaintext', 'u1', (16,)), ('ciphertext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (16,))]
+  Elements: 60,000
+  Estimated uncompressed size: 3.66 MB
+  Compression: None
+  Chunks: None
+  No attributes
+[DATASET] traces
+  Path: /traces
+  Shape: (60000, 100000)
+  Dimensions: 2
+  Dtype: int8
+  Elements: 6,000,000,000
+  Estimated uncompressed size: 5.59 GB
+  Compression: None
+  Chunks: None
+  No attributes

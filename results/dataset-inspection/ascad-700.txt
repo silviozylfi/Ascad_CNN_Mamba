@@ -1,0 +1,76 @@
+================================================================================
+File: /home/silviozylfi/projects/tesi-smia/data/raw/ascad/ASCAD_data/ASCAD_databases/ASCAD.h5
+File size: 44.41 MB
+================================================================================
+
+Root keys:
+  - Attack_traces
+  - Profiling_traces
+  No attributes
+
+Complete structure:
+
+Group: Attack_traces
+  No attributes
+  [DATASET] labels
+    Path: /Attack_traces/labels
+    Shape: (10000,)
+    Dimensions: 1
+    Dtype: int64
+    Elements: 10,000
+    Estimated uncompressed size: 78.12 KB
+    Compression: None
+    Chunks: None
+    No attributes
+  [DATASET] metadata
+    Path: /Attack_traces/metadata
+    Shape: (10000,)
+    Dimensions: 1
+    Dtype: [('plaintext', 'u1', (16,)), ('ciphertext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (16,)), ('desync', '<u4', (1,))]
+    Elements: 10,000
+    Estimated uncompressed size: 664.06 KB
+    Compression: None
+    Chunks: None
+    No attributes
+  [DATASET] traces
+    Path: /Attack_traces/traces
+    Shape: (10000, 700)
+    Dimensions: 2
+    Dtype: int8
+    Elements: 7,000,000
+    Estimated uncompressed size: 6.68 MB
+    Compression: None
+    Chunks: None
+    No attributes
+Group: Profiling_traces
+  No attributes
+  [DATASET] labels
+    Path: /Profiling_traces/labels
+    Shape: (50000,)
+    Dimensions: 1
+    Dtype: int64
+    Elements: 50,000
+    Estimated uncompressed size: 390.62 KB
+    Compression: None
+    Chunks: None
+    No attributes
+  [DATASET] metadata
+    Path: /Profiling_traces/metadata
+    Shape: (50000,)
+    Dimensions: 1
+    Dtype: [('plaintext', 'u1', (16,)), ('ciphertext', 'u1', (16,)), ('key', 'u1', (16,)), ('masks', 'u1', (16,)), ('desync', '<u4', (1,))]
+    Elements: 50,000
+    Estimated uncompressed size: 3.24 MB
+    Compression: None
+    Chunks: None
+    No attributes
+  [DATASET] traces
+    Path: /Profiling_traces/traces
+    Shape: (50000, 700)
+    Dimensions: 2
+    Dtype: int8
+    Elements: 35,000,000
+    Estimated uncompressed size: 33.38 MB
+    Compression: None
+    Chunks: None
+    No attributes

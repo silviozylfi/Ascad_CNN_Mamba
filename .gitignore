@@ -12,3 +12,7 @@ outputs/
 *.pt
 *.pth
 *.ckpt
+venv/
+.DS_Store
+Thumbs.db
+*.log

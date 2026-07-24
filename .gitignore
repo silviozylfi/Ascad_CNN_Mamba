@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.vscode/
+.env
+.venv/
+data/
+datasets/
+checkpoints/
+runs/
+outputs/
+*.pt
+*.pth
+*.ckpt

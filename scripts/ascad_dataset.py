@@ -6,6 +6,7 @@ import numpy as np
 import torch
 from torch import Tensor
 from torch.utils.data import Dataset
+from collections.abc import Callable
 
 DatasetVariant = Literal["700", "raw"]
 DatasetSplit = Literal["profiling", "attack"]
@@ -22,7 +23,8 @@ class ASCADDataset(Dataset[tuple[Tensor, Tensor]]):
             ascad_path: str | Path,
             raw_path: str | Path | None = None,
             variant: DatasetVariant = "700",
-            split: DatasetSplit = "profiling"
+            split: DatasetSplit = "profiling",
+            transform: Callable[[Tensor], Tensor] | None = None,
     ) -> None:
         self.ascad_path = Path(ascad_path)
         self.raw_path = Path(raw_path) if raw_path is not None else None
@@ -33,6 +35,7 @@ class ASCADDataset(Dataset[tuple[Tensor, Tensor]]):
         self._label_file: h5py.File | None = None
         self._traces: h5py.Dataset | None = None
         self._labels: h5py.Dataset | None = None
+        self.transform = transform
 
         self._validate_arguments()
 
@@ -90,6 +93,10 @@ class ASCADDataset(Dataset[tuple[Tensor, Tensor]]):
         label_value = int(labels[index])
 
         trace_tensor = torch.from_numpy(trace_array)
+
+        if self.transform is not None:
+            trace_tensor = self.transform(trace_tensor)
+
         label_tensor = torch.tensor(label_value, dtype=torch.long)
 
         return trace_tensor, label_tensor

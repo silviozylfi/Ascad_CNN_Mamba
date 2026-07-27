@@ -6,23 +6,21 @@ from models.cnn_mamba_paper import PaperCNNMambaModel
 def main() -> None:
     if not torch.cuda.is_available():
         raise RuntimeError(
-            "CUDA non è disponibile. "
-            "Questo modello Mamba richiede una GPU NVIDIA con CUDA."
+            "CUDA not available. "
+            "This Mamba model requires an NVIDIA GPU with CUDA."
         )
 
     device = torch.device("cuda")
 
-    print(f"Device utilizzato: {device}")
+    print(f"Device: {device}")
     print(f"GPU: {torch.cuda.get_device_name(0)}")
 
     batch_size = 4
     trace_length = 700
 
-    # Sposta il modello sulla GPU
     model = PaperCNNMambaModel(num_classes=256).to(device)
     model.eval()
 
-    # Crea anche le tracce direttamente sulla GPU
     traces = torch.randn(
         batch_size,
         trace_length,

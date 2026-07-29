@@ -36,7 +36,7 @@ CHECKPOINTS_DIR = PROJECT_ROOT / "checkpoints"
 
 BATCH_SIZE = 32
 LEARNING_RATE = 1e-5
-EPOCHS = 10
+EPOCHS = 150
 
 TRAIN_RATIO = 0.9
 VALIDATION_RATIO = 0.1
@@ -73,7 +73,6 @@ def create_dataloaders() -> tuple[ASCADDataset, DataLoader, DataLoader]:
         transform=trace_transform
     )
 
-    sample_trace, sample_label = dataset[0]
 
     train_size = int(TRAIN_RATIO * len(dataset))
     validation_size = int(VALIDATION_RATIO * len(dataset))
@@ -248,7 +247,7 @@ def main() -> None:
         print(f"Trainable parameters: {trainable_parameters:,}")
         print()
 
-        criterion = nn.CrossEntropyLoss()
+        criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
 
         optimizer = Adam(
             model.parameters(),

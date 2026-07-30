@@ -38,7 +38,7 @@ def main() -> None:
 
             chunk = np.asarray(
                 traces[start:end],
-                dtype=np.float64,
+                dtype=np.float64
             )
 
             running_sum += chunk.sum(axis=0)
@@ -70,7 +70,7 @@ def main() -> None:
         np.savez(
             OUTPUT_PATH,
             mean=mean,
-            std=std,
+            std=std
         )
 
     print()

@@ -24,7 +24,7 @@ class ASCADDataset(Dataset[tuple[Tensor, Tensor]]):
             raw_path: str | Path | None = None,
             variant: DatasetVariant = "700",
             split: DatasetSplit = "profiling",
-            transform: Callable[[Tensor], Tensor] | None = None,
+            transform: Callable[[Tensor], Tensor] | None = None
     ) -> None:
         self.ascad_path = Path(ascad_path)
         self.raw_path = Path(raw_path) if raw_path is not None else None

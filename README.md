@@ -2,7 +2,7 @@
 
 Bachelor Thesis
 
-This repository contains the code developed for the experimental evaluation of CNN, Mamba and Samba architectures for Side-Channel Analysis on long traces.
+This repository contains the code developed for the experimental evaluation of CNN and Mamba architectures for Side-Channel Analysis on long traces.
 
 ## Requirements
 
